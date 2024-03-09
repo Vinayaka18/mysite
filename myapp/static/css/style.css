@@ -1,0 +1,145 @@
+/* @import url(https://fonts.googleapis.com/css?family=Roboto:300); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* index.html */
+
+
+nav {
+    background-color: #cc005f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5% 3%;
+    /* Converted pixel values to percentages */
+    padding-right: 5%;
+    /* Converted pixel values to percentages */
+    font-size: 1.3vw;
+    width: 100vw;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+#video-container {
+    display: flex;
+    margin-top: 2%;
+}
+
+#video-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+video {
+    width: 100%;
+    margin-bottom: 2%;
+    /* Converted pixel value to percentage */
+}
+
+#overview {
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    width: 25vw;
+    background-color: #f2f2f2;
+}
+
+#overview h2 {
+    font-size: 2vw;
+}
+
+/* Add this style to your existing CSS */
+#overview img.highlighted {
+    border: 0.2em solid #cc005f;
+    /* Set your desired highlight color */
+}
+
+.video {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+}
+
+.video video {
+
+    /* height: 70vh; */
+}
+
+.videoTitle {
+    font-size: 2vw;
+    /* Converted pixel value to em for better responsiveness */
+    font-weight: 700;
+}
+
+.channelName {
+    margin-top: 0.5em;
+    /* Converted pixel value to em for better responsiveness */
+    font-size: 1.5vw;
+    /* Converted pixel value to em for better responsiveness */
+}
+
+.lang {
+    width: 98%;
+    background-color: rgba(0, 255, 255, 0.597);
+    margin: 1%;
+    /* Converted pixel value to percentage */
+}
+
+.lang>p {
+    font-size: 1.5vw;
+    /* Converted pixel value to em for better responsiveness */
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    /* Converted pixel value to em for better responsiveness */
+    border-bottom: 0.1em solid black;
+    /* Converted pixel value to em for better responsiveness */
+    padding: 1% 1%;
+    /* Converted pixel values to percentages */
+}
+
+.thumbnailImage {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1%;
+}
+
+.thumbnailImage img {
+    width: 7vw;
+    /* height: 10vh; */
+    padding: 1%;
+    /* Converted pixel value to percentage */
+}
+
+.videoImage {
+    display: flex;
+}
+
+.videoImage p {
+    font-size: 1.3vw;
+    font-weight: 300;
+    letter-spacing: 0;
+}
+
+
+
+
+video::-webkit-media-controls-panel {
+    width: 10vw;
+    /* Set your desired width using viewport width (vw) */
+}

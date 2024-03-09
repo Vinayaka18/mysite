@@ -1,0 +1,85 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <nav>
+            <div class="lNav">
+                <h1><a href="www.devashish.site">devashish.site</a></h1>
+            </div>
+            <div class="rNav">
+                Hello
+            </div>
+
+        </nav>
+        <div id="main">
+
+            <div id="video-container">
+                <!-- Video Player with Controls -->
+                <div class="video">
+                    <video controls="controls" controlslist="nodownload">
+                        <!-- Default video source or use JavaScript to change source on thumbnail click -->
+                        <source
+                            src="{% static 'media/devashish-site.mp4' %}"
+                            type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="videoTitle" id="selectedVideoTitle">
+                        Welcome to devashish.site.
+                    </div>
+                    <div class="channelName">
+                        Front-End Domination: Create Anything with Code
+                    </div>
+                </div>
+                <!-- Thumbnails of More Videos -->
+                <div id="overview">
+                    <h2>Course Videos</h2>
+                    <div class="lang">
+                        <p>HTML</p>
+                        <div class="thumbnailImage">
+                            {% for video in videos %}
+                            <div class="videoImage">
+                                <img src="{{ video.thumbnail_image.url }}"
+                                    alt="{{ video.title }}"
+                                    onclick="changeVideoSource('{{ video.video_source.url }}', '{{ video.title }}', this)">
+                                <p>{{ video.title }}</p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+function changeVideoSource(videoSource, videoTitle, clickedThumbnail) {
+    // JavaScript function to change the video source based on the clicked thumbnail
+    document.querySelector('video').src = videoSource;
+
+    // Update the video title on the left side using JavaScript
+    document.getElementById('selectedVideoTitle').innerText = videoTitle;
+
+    // Remove the 'highlighted' class from all thumbnails
+    var thumbnails = document.querySelectorAll('.thumbnailImage img');
+    thumbnails.forEach(function(thumbnail) {
+        thumbnail.classList.remove('highlighted');
+    });
+
+    // Add the 'highlighted' class to the clicked thumbnail
+    clickedThumbnail.classList.add('highlighted');
+}
+
+
+            
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+        </script>
+
+    </body>
+</html>
